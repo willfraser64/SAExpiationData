@@ -1,5 +1,22 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Speeding Offences";
 }
+
+<div class="text-dark bg-gradient bg-warning p-2 border rounded">
+    <h2>Speeding Offences</h2>
+</div>
+<form method="post" asp-controller="SpeedingOffences" asp-action="Index">
+    <div class="row mt-2 ">
+        <div class="col-4">
+            <input class="form-control" name="offenceSearch" placeholder="Offence search..." />
+        </div>
+        <div class="col-3">
+            <select name="speedCodes" class="form-control" data-toggle="tooltip" title="View offences for a specific speeding category">
+                <option selected hidden disabled>All Categories...</option>
+            </select>
+        </div>
+        <div class="col-1">
+            <button type="submit" asp-action="Index" class="btn btn-outline-primary">Search</button>
+        </div>
+    </div>
+</form>
